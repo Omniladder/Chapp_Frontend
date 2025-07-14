@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+/* Import Preferred Nimbus Font used for logo*/
+@font-face {
+  font-family: "Nimbus Sans";
+  src: url('assets/Fonts/nimbus-sans-l.bold.otf') format('opentype');
+  font-weight: bold;
+}
+
+
+
