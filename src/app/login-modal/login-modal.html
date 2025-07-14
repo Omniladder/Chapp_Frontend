@@ -29,10 +29,10 @@
 
 
   <!-- Username Input box -->
-    <input type="text" class=" mt-6 " pInputText placeholder="Username:"/>
+    <input type="text" class=" w-lg mt-6" pInputText placeholder="Username:"/>
 
   <!-- Password Input box -->
-    <p-password  class=" mt-6 " placeholder="Password:"/>
+    <p-password  [(ngModel)]="password"  class=" mt-6 w-lg " placeholder="Password:" [feedback]="false" [toggleMask]="true"  inputStyleClass="w-lg" />
 
 
 
