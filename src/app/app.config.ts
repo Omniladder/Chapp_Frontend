@@ -15,10 +15,14 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
     provideRouter(routes), provideClientHydration(withEventReplay()),
-  providePrimeNG({
-    theme:  {
-      preset: Aura
-    }
+    provideAnimationsAsync(),
+    providePrimeNG({
+      theme:  {
+        preset: Aura,
+        options: {
+          autoMode: false
+        }
+      }
   })
   ]
 };

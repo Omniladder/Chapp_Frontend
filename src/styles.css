@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "tailwindcss-primeui";
 
 /* Import Preferred Nimbus Font used for logo*/
 @font-face {
