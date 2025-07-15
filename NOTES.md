@@ -15,7 +15,9 @@ Color Scheme:
 - Base Dark: #272D2D
 - Base Light: #F6F8FF
 
-Font: Nimbus Sans Bold
+Font: 
+- Nimbus Sans Bold (Logo Font)
+- Josefin Sans (General Font)
 
 Tools:
   - Framework: Angular
