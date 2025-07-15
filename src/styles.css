@@ -8,5 +8,11 @@
   font-weight: bold;
 }
 
+@font-face {
+  font-family: "Josefin Sans";
+  src: url('assets/Fonts/JosefinSans-VariableFont_wght.ttf') format('opentype');
+}
+
+
 
 
