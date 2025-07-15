@@ -5,7 +5,7 @@ import { CreateScreen } from './create-screen/create-screen';
 export const routes: Routes = [
   {
     path: '',
-    component: LoginScreen,
+    redirectTo: "login",
     pathMatch: "full"
   },
   {
