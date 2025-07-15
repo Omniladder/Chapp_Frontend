@@ -35,8 +35,8 @@
     <p-password  [(ngModel)]="password"  class=" mt-6 w-lg " placeholder="Password:" [feedback]="false" [toggleMask]="true"  inputStyleClass="w-lg" />
 
     <div class="flex flex-row items-center  justify-center mt-11">
-      <h1 class=" text-[#28AFB0] underline cursor-pointer text-lg mr-37 ">Create Account</h1>
-      <button class="bg-[#EC4E20] rounded-xl h-15 w-35 text-white font-bold [font-family:'Nimbus_Sans',sans-serif] text-2xl cursor-pointer hover:border-[#EDB458]  transform transition-all duration-100 hover:border-4 active:bg-[#EDB458]">
+      <h1 class=" text-[#28AFB0] underline cursor-pointer text-lg mr-37 " (click)="goToCreate()">Create Account</h1>
+      <button class="bg-[#EC4E20] rounded-xl h-15 w-35 text-white font-bold [font-family:'Nimbus_Sans',sans-serif] text-2xl cursor-pointer hover:border-[#EDB458]  transform transition-all duration-100 hover:border-4 active:bg-[#EDB458]" (click)="goToHome()">
         Login
       </button>
 
