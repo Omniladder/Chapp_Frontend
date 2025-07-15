@@ -25,7 +25,7 @@
 
   <div class="mt-15 flex flex-col">
 
-    <h3 class="items-center font-bold text-2xl ml-2 [font-family:'Nimbus_Sans',sans-serif] text-[#272d2d]"> Or Sign-In With:</h3>
+    <h3 class="items-center font-bold text-2xl ml-5 [font-family:'Nimbus_Sans',sans-serif] text-[#272d2d]"> Or Sign-In With:</h3>
 
 
   <!-- Username Input box -->
@@ -34,7 +34,13 @@
   <!-- Password Input box -->
     <p-password  [(ngModel)]="password"  class=" mt-6 w-lg " placeholder="Password:" [feedback]="false" [toggleMask]="true"  inputStyleClass="w-lg" />
 
+    <div class="flex flex-row items-center  justify-center mt-11">
+      <h1 class=" text-[#28AFB0] underline cursor-pointer text-lg mr-37 ">Create Account</h1>
+      <button class="bg-[#EC4E20] rounded-xl h-15 w-35 text-white font-bold [font-family:'Nimbus_Sans',sans-serif] text-2xl cursor-pointer hover:border-[#EDB458]  transform transition-all duration-100 hover:border-4 active:bg-[#EDB458]">
+        Login
+      </button>
 
+    </div>
 
 
   </div>
