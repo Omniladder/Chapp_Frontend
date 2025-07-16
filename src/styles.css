@@ -13,6 +13,9 @@
   src: url('assets/Fonts/JosefinSans-VariableFont_wght.ttf') format('opentype');
 }
 
-
+@font-face {
+  font-family: "K2D-Bold";
+  src: url('assets/Fonts/K2D-Bold.ttf');
+}
 
 
