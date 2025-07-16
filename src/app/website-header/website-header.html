@@ -1,2 +1,8 @@
-<div class=" h-35 inset-x-0 bg-[#272D2D]" >
+<div class=" h-35 inset-x-0 bg-[#272D2D] flex flex-row items-center" >
+  @if (showLogo) {
+  <img class=" h-30 w-auto ml-6 cursor-pointer " src="../../assets/Logos/Chapplogo_Text.png" (click)="goToHome()">
+  }
+  <div class=" ml-auto mr-15">
+    <ng-container *ngTemplateOutlet="rightSide"></ng-container>
+  </div>
 </div>

@@ -1,8 +1,8 @@
 <!-- Login Main Section Div -->
 <div class=" h-240 w-220 bg-[#F6F8FF] fixed inset-0 mx-auto my-auto  border-[#EDB458] border-10 rounded-3xl flex items-center flex-col">
   <!-- Logo Section-->
-  <img src="assets/Logos/Chapplogo_transparent.png" class=" h-50 w-50 mt-5">
-  <img src="assets/Logos/Chapp_TextOnly_Dark.png" class=" h-28 w-80 mt-2">
+  <img src="assets/Logos/Chapplogo_transparent.png" class=" h-50 w-auto mt-5">
+  <img src="assets/Logos/Chapp_TextOnly_Dark.png" class=" h-28 w-auto mt-2">
 
 
   <!-- OAuth Buttons -->
@@ -10,13 +10,13 @@
     <h3 class="items-center font-bold text-2xl ml-2 [font-family:'Nimbus_Sans',sans-serif] text-[#272d2d]"> Login With:</h3>
     <div class="grid grid-cols-3 mt-2 gap-8">
       <button class="bg-[#272d2d] h-25 w-25 rounded-2xl flex justify-center items-center border-[#EDB458] border-4  shadow-[3px_3px_12px_rgba(0,0,0,0.5)] cursor-pointer transform transition-transform duration-200 hover:scale-107">
-        <img src="assets/OAuth/GoogleLogo.png" class="h-15 w-15 ">
+        <img src="assets/OAuth/GoogleLogo.png" class="h-15 w-auto " (click)="goToHome()">
       </button>
-      <button class="bg-[#272d2d] h-25 w-25 rounded-2xl flex justify-center items-center border-[#EDB458] border-4 shadow-[3px_3px_12px_rgba(0,0,0,0.5)] cursor-pointer transform transition-transform duration-200 hover:scale-107">
-        <img src="assets/OAuth/FacebookLogo.png" class="h-15 w-15 ">
+      <button class="bg-[#272d2d] h-25 w-25 rounded-2xl flex justify-center items-center border-[#EDB458] border-4 shadow-[3px_3px_12px_rgba(0,0,0,0.5)] cursor-pointer transform transition-transform duration-200 hover:scale-107"  (click)="goToHome()">
+        <img src="assets/OAuth/FacebookLogo.png" class="h-15 w-auto ">
       </button>
-      <button class="bg-[#272d2d] h-25 w-25 rounded-2xl flex justify-center items-center border-[#EDB458] border-4 shadow-[3px_3px_12px_rgba(0,0,0,0.5)] cursor-pointer transform transition-transform duration-200 hover:scale-107">
-        <img src="assets/OAuth/LinkedinLogo.png" class="h-15 w-15 rounded-3xl border-[#EDB458]  ">
+      <button class="bg-[#272d2d] h-25 w-auto rounded-2xl flex justify-center items-center border-[#EDB458] border-4 shadow-[3px_3px_12px_rgba(0,0,0,0.5)] cursor-pointer transform transition-transform duration-200 hover:scale-107">
+        <img src="assets/OAuth/LinkedinLogo.png" class="h-15 w-15 rounded-3xl border-[#EDB458]  "  (click)="goToHome()" >
       </button>
     </div>
   </div>
