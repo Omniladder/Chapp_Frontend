@@ -1,0 +1,4 @@
+<div class=" bg-[#F6F8FF] w-390 h-45 rounded-xl ml-7 border-[#EDB458] border-5 flex flex-row items-center">
+  <img src="../../assets/ProfileIcons/Profile.png" class="cursor-pointer h-35 w-auto ml-8 ">
+
+</div>
