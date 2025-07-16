@@ -6,7 +6,6 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'website-header',
   imports: [ProfileButtons, CommonModule],
-  standalone: true,
   templateUrl: './website-header.html',
   styleUrl: './website-header.css'
 })

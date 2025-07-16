@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'profile-buttons',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './profile-buttons.css'
 })
 export class ProfileButtons {
+  private router = inject(Router)
 
+
+  goToHome(){
+    this.router.navigate(['/login']);
+  }
 }
