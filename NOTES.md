@@ -19,6 +19,7 @@ Font:
 - Nimbus Sans Bold (Logo Font)
 - Josefin Sans (General Font)
 - K2D (Friends)
+- Instrument Sans (Chat Font)
 
 Tools:
   - Framework: Angular

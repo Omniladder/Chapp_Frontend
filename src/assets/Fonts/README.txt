@@ -1,32 +1,43 @@
-Josefin Sans Variable Font
-==========================
+Instrument Sans Variable Font
+=============================
 
-This download contains Josefin Sans as both variable fonts and static fonts.
+This download contains Instrument Sans as both variable fonts and static fonts.
 
-Josefin Sans is a variable font with this axis:
+Instrument Sans is a variable font with these axes:
+  wdth
   wght
 
 This means all the styles are contained in these files:
-  JosefinSans-VariableFont_wght.ttf
-  JosefinSans-Italic-VariableFont_wght.ttf
+  InstrumentSans-VariableFont_wdth,wght.ttf
+  InstrumentSans-Italic-VariableFont_wdth,wght.ttf
 
 If your app fully supports variable fonts, you can now pick intermediate styles
 that aren’t available as static fonts. Not all apps support variable fonts, and
-in those cases you can use the static font files for Josefin Sans:
-  static/JosefinSans-Thin.ttf
-  static/JosefinSans-ExtraLight.ttf
-  static/JosefinSans-Light.ttf
-  static/JosefinSans-Regular.ttf
-  static/JosefinSans-Medium.ttf
-  static/JosefinSans-SemiBold.ttf
-  static/JosefinSans-Bold.ttf
-  static/JosefinSans-ThinItalic.ttf
-  static/JosefinSans-ExtraLightItalic.ttf
-  static/JosefinSans-LightItalic.ttf
-  static/JosefinSans-Italic.ttf
-  static/JosefinSans-MediumItalic.ttf
-  static/JosefinSans-SemiBoldItalic.ttf
-  static/JosefinSans-BoldItalic.ttf
+in those cases you can use the static font files for Instrument Sans:
+  static/InstrumentSans_Condensed-Regular.ttf
+  static/InstrumentSans_Condensed-Medium.ttf
+  static/InstrumentSans_Condensed-SemiBold.ttf
+  static/InstrumentSans_Condensed-Bold.ttf
+  static/InstrumentSans_SemiCondensed-Regular.ttf
+  static/InstrumentSans_SemiCondensed-Medium.ttf
+  static/InstrumentSans_SemiCondensed-SemiBold.ttf
+  static/InstrumentSans_SemiCondensed-Bold.ttf
+  static/InstrumentSans-Regular.ttf
+  static/InstrumentSans-Medium.ttf
+  static/InstrumentSans-SemiBold.ttf
+  static/InstrumentSans-Bold.ttf
+  static/InstrumentSans_Condensed-Italic.ttf
+  static/InstrumentSans_Condensed-MediumItalic.ttf
+  static/InstrumentSans_Condensed-SemiBoldItalic.ttf
+  static/InstrumentSans_Condensed-BoldItalic.ttf
+  static/InstrumentSans_SemiCondensed-Italic.ttf
+  static/InstrumentSans_SemiCondensed-MediumItalic.ttf
+  static/InstrumentSans_SemiCondensed-SemiBoldItalic.ttf
+  static/InstrumentSans_SemiCondensed-BoldItalic.ttf
+  static/InstrumentSans-Italic.ttf
+  static/InstrumentSans-MediumItalic.ttf
+  static/InstrumentSans-SemiBoldItalic.ttf
+  static/InstrumentSans-BoldItalic.ttf
 
 Get started
 -----------

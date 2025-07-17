@@ -7,7 +7,7 @@ import { LoginModal } from '../login-modal/login-modal';
 
 @Component({
   selector: 'login-screen',
-  imports: [RouterOutlet, WebsiteHeader, LoginModal],
+  imports: [WebsiteHeader, LoginModal],
   templateUrl: './login-screen.html',
   styleUrl: './login-screen.css'
 })
