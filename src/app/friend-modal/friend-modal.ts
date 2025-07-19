@@ -1,10 +1,11 @@
 import { Component, inject, Input } from '@angular/core';
+import { ProfileModal } from '../profile-modal/profile-modal';
 
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'friend-modal',
-  imports: [],
+  imports: [ ProfileModal],
   templateUrl: './friend-modal.html',
   styleUrl: './friend-modal.css'
 })
