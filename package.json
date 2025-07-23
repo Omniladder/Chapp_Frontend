@@ -31,6 +31,7 @@
     "@angular/ssr": "^20.1.0",
     "@primeuix/themes": "^1.2.1",
     "@tailwindcss/postcss": "^4.1.11",
+    "angular": "^1.8.3",
     "express": "^5.1.0",
     "npx": "^10.2.2",
     "postcss": "^8.5.6",
