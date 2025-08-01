@@ -1,53 +1,58 @@
 <div class=" fixed inset-0 bg-[#F6F8FF] h-200 w-340 rounded-3xl m-auto border-8 border-[#EDB458] flex pl-15 flex-col ">
 
+  <form (ngSubmit)="createAccount()" method="post">
   <div class="flex flex-row">
   <!-- All User inputs -->
     <div>
       <div>
-  <h1 class=" text-[#EC4E20] font-bold text-5xl [font-family:'Josefin_Sans',sans-serif] pt-10 " >Create Account:</h1>
-        <h1 class="[font-family:'Josefin_Sans',sans-serif] text-4xl mt-7 ml-10 ">
+  <h1 class=" text-[#EC4E20] font-bold text-5xl [font-family:'Josefin_Sans',sans-serif] pt-10   " >Create Account:</h1>
+        <h1 class="[font-family:'Josefin_Sans',sans-serif] text-4xl mt-7 ml-10  "  >
           First Name:
         </h1>
-      <input type="text" class=" w-3xl mt-1 ml-6  " pSize="large" pInputText placeholder=" Enter First Name Here:"/>
+      <input type="text" class=" w-3xl mt-1 ml-6  " pSize="large" pInputText placeholder=" Enter First Name Here:" name="fname" [(ngModel)]="form.fname" />
       </div>
 
       <div>
         <h1 class="[font-family:'Josefin_Sans',sans-serif] text-4xl mt-7 ml-10 ">
           Last Name:
         </h1>
-      <input type="text" class=" w-3xl mt-1 ml-6  " pSize="large" pInputText placeholder=" Enter Last Name Here:"/>
+      <input type="text" class=" w-3xl mt-1 ml-6  " pSize="large"  pInputText placeholder=" Enter Last Name Here:"  name="lname" [(ngModel)]="form.lname"/>
       </div>
 
       <div>
         <h1 class="[font-family:'Josefin_Sans',sans-serif] text-4xl mt-7 ml-10 ">
           Username:
         </h1>
-      <input type="text" class=" w-3xl mt-1 ml-6  " pSize="large" pInputText placeholder=" Enter Username Here:"/>
+      <input  type="text" class=" w-3xl mt-1 ml-6  " pSize="large"  pInputText placeholder=" Enter Username Here:" name="uname" [(ngModel)]="form.username" />
       </div>
 
       <div>
         <h1 class="[font-family:'Josefin_Sans',sans-serif] text-4xl mt-7 ml-10 ">
           Password:
         </h1>
-      <p-password [(ngModel)]="password" class=" w-3xl mt-1 ml-6  " size="large" [toggleMask]="true" placeholder=" Enter Password Here:" inputStyleClass="w-3xl" />
+      <p-password  class=" w-3xl mt-1 ml-6  "   size="large" [toggleMask]="true" placeholder=" Enter Password Here:" inputStyleClass="w-3xl" name="password" [(ngModel)]="form.password" />
       </div>
 
       <div>
         <h1 class="[font-family:'Josefin_Sans',sans-serif] text-4xl mt-7 ml-10 ">
           Email:
         </h1>
-      <input type="email" class=" w-3xl mt-1 ml-6  " pSize="large" pInputText placeholder=" Enter Email Here:"/>
+      <input type="email" class=" w-3xl mt-1 ml-6  " pSize="large" pInputText placeholder=" Enter Email Here:" name="email" [(ngModel)]="form.email" />
       </div>
       </div>
       <!-- Logo -->
       <div class=" ml-auto mr-auto flex flex-col items-center pt-3 ">
         <img src="assets/Logos/Chapplogo_transparent.png" class=" h-50 w-50">
         <img src="assets/Logos/Chapp_TextOnly_Dark.png" class=" h-28 w-80 mt-2">
-        <button class=" bg-[#EC4E20] rounded-xl h-20 w-45 text-[#F6F8FF] [font-family:'Josefin_Sans',sans-serif] text-3xl font-bold  absolute bottom-0 mb-25 cursor-pointer hover:border-[#EDB458]  transform transition-all duration-100 hover:border-6 active:bg-[#EDB458]" (click)="goToHome()">Create</button>
+        <div class=" absolute bottom-0 mb-15 flex flex-col items-center ">
+          <h1 class=" mb-4 text-red-500 font-bold text-lg [font-family:'Josefin_Sans',sans-serif] ">{{errorText}}</h1>
+          <button class=" bg-[#EC4E20] rounded-xl h-20 w-45 text-[#F6F8FF] [font-family:'Josefin_Sans',sans-serif] text-3xl font-bold  cursor-pointer hover:border-[#EDB458]  transform transition-all duration-100 hover:border-6 active:bg-[#EDB458]" type="submit">Create</button>
+        </div>
       </div>
 
 
 
 
   </div>
+  </form>
 </div>

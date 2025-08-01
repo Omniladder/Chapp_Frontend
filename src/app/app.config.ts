@@ -6,6 +6,9 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
+
+import { provideHttpClient } from '@angular/common/http';
+
 //PrimeNG Component Library imports
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeuix/themes/aura';
@@ -15,6 +18,7 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
     provideRouter(routes), provideClientHydration(withEventReplay()),
+    provideHttpClient(),
     provideAnimationsAsync(),
     providePrimeNG({
       theme:  {
