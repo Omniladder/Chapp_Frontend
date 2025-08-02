@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectorRef } from '@angular/core';
 
 //Frontend Components
 import { InputTextModule } from "primeng/inputtext";
@@ -11,7 +11,6 @@ import { Data } from '../services/data';
 //Angular Tools
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef } from '@angular/core';
 
 
 @Component({
@@ -42,8 +41,8 @@ export class CreateModal {
 
 
 
-  goToHome(){
-    this.router.navigate(['/home']);
+  goToLogin(){
+    this.router.navigate(['/login']);
   }
 
   createAccount(){
@@ -51,7 +50,7 @@ export class CreateModal {
 
     this.httpService.postRequest('/api/signup', this.form)
       .subscribe({
-        next: (res) => this.goToHome(),
+        next: (res) => this.goToLogin(),
         error: (err) => this.responseHandling(err)
       });
   }

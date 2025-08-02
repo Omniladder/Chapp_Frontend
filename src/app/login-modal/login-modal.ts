@@ -1,8 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectorRef } from '@angular/core';
 import { InputTextModule } from "primeng/inputtext";
 import { PasswordModule } from "primeng/password";
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+
+import { Data } from '../services/data';
 
 @Component({
   selector: 'login-modal',
@@ -12,14 +14,34 @@ import { Router } from '@angular/router';
 })
 export class LoginModal {
 
+  constructor(private httpService: Data, private cdr: ChangeDetectorRef){}
+
   private router = inject(Router)
 
-  username: string = ''
-  password: string = ''
+  errorText = '';
 
+  accountSignin = {
+    username: '',
+    password: ''
+  }
+
+
+  loginToAccount(){
+    this.httpService.postRequest('/api/login', this.accountSignin)
+      .subscribe({
+        next: (res) => this.goToHome(),
+        error: (err) => this.responseHandling(err)
+      });
+  }
+
+  responseHandling(res: any){
+    this.errorText = res.error.message;
+    console.error("Error: ", this.errorText)
+    this.cdr.detectChanges();
+  }
 
   goToHome(){
-    this.router.navigate(['/home']);
+   this.router.navigate(['/home']);
   }
 
   goToCreate(){
