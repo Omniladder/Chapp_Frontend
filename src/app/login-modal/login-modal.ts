@@ -44,6 +44,13 @@ export class LoginModal {
    this.router.navigate(['/home']);
   }
 
+  // Temporary Error WHen trying to OAuth before it gets setup
+  OAuthError(){
+    this.errorText = "OAuth Not Yet Avaliable please Login Manually";
+    console.error("Error: Attempted OAuth Not yet Avalaliable")
+    this.cdr.detectChanges();
+  }
+
   goToCreate(){
     this.router.navigate(['/creation']);
   }
