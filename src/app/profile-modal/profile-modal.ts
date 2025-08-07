@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfirmPopupModule } from 'primeng/confirmpopup'
 import { ConfirmationService } from 'primeng/api';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'profile-modal',
@@ -12,10 +13,11 @@ import { ConfirmationService } from 'primeng/api';
 })
 export class ProfileModal {
 
-  constructor(private confirmationService: ConfirmationService) {}
+  constructor(private confirmationService: ConfirmationService, private authService: AuthService) {}
   private router = inject(Router)
 
   async logout(){
+    await this.authService.checkSession();
     await fetch('/api/logout', {
       method: 'DELETE',
       credentials: 'include'
@@ -39,6 +41,7 @@ export class ProfileModal {
                 severity: 'danger'
             },
             accept: async () => {
+              await this.authService.checkSession();
               let response = await fetch('/api/delete', {
                 method: 'DELETE',
                 credentials: 'include'
