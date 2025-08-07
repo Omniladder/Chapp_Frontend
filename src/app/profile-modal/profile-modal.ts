@@ -15,7 +15,12 @@ export class ProfileModal {
   constructor(private confirmationService: ConfirmationService) {}
   private router = inject(Router)
 
-  goToLogin(){
+  async logout(){
+    await fetch('/api/logout', {
+      method: 'DELETE',
+      credentials: 'include'
+    });
+
     this.router.navigate(['/login']);
   }
 
@@ -40,7 +45,7 @@ export class ProfileModal {
               });
 
               if(response.ok){
-                this.goToLogin();
+                this.router.navigate(['/login']);
               }
               else{
                 console.error("Delete Failed ", response.status);
