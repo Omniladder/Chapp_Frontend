@@ -33,8 +33,19 @@ export class ProfileModal {
                 label: 'Delete',
                 severity: 'danger'
             },
-            accept: () => {
-              this.goToLogin();
+            accept: async () => {
+              let response = await fetch('/api/delete', {
+                method: 'DELETE',
+                credentials: 'include'
+              });
+
+              if(response.ok){
+                this.goToLogin();
+              }
+              else{
+                console.error("Delete Failed ", response.status);
+                console.error(response);
+              }
             },
             reject: () => {
             }
