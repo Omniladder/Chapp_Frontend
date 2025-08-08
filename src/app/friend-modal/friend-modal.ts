@@ -14,7 +14,8 @@ export class FriendModal {
   // Data Variables
   @Input() chain!: number;
   @Input() missedMessages!: number;
-  @Input() name!: string
+  @Input() name!: string;
+  @Input() username!: string;
   @Input() achievements?: string[];
 
 

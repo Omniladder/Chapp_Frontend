@@ -9,5 +9,6 @@ import { Component, Input } from '@angular/core';
 export class AddFriendDiv {
 
   @Input() name! : string;
+  @Input() username!: string;
   @Input() isFoF! : boolean;
 }
