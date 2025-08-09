@@ -1,12 +1,67 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { AddFriendDiv } from '../add-friend-div/add-friend-div';
+import { Data } from '../services/data';
+import { CommonModule } from '@angular/common';
+
+
+  type User = {
+    id: number;
+    username: string;
+    fname: string;
+    lname: string;
+    friendOfFriend: boolean;
+  }
+
+  type FriendsResponse = {
+      data: User[]
+  }
 
 @Component({
   selector: 'add-friend-modal',
-  imports: [AddFriendDiv],
+  imports: [AddFriendDiv, CommonModule],
   templateUrl: './add-friend-modal.html',
   styleUrl: './add-friend-modal.css'
 })
 export class AddFriendModal {
+
+  constructor(private httpService: Data, private cdr: ChangeDetectorRef){}
+
+  users: User[] = [];
+  query: string = '';
+
+  async ngOnInit(): Promise<void> {
+    await this.getUsers();
+  }
+
+  async getUsers(queryTerm?: string): Promise<void>{
+
+    let res = await fetch('/api/findFriends', {
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        searchTerm: queryTerm,
+        numberOfPeople: 35,
+        hasSearchTerm: !!queryTerm
+      })
+    })
+
+  if (!res.ok) {
+    console.error('Bad HTTP status', res.status);
+    console.error(await res.text()); // see the raw response
+    return;
+  }
+
+    const json = (await res.json()) as FriendsResponse;
+    this.users = json.data;
+    this.cdr.detectChanges();
+
+    console.log("Users ", this.users);
+  }
+
+  errorHandling(res: any){
+    console.error(res);
+  }
+
 
 }
