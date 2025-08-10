@@ -3,6 +3,7 @@ import { AddFriendDiv } from '../add-friend-div/add-friend-div';
 import { Data } from '../services/data';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../services/auth.service';
+import { FormsModule } from '@angular/forms';
 
 
   type User = {
@@ -19,7 +20,7 @@ import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'add-friend-modal',
-  imports: [AddFriendDiv, CommonModule],
+  imports: [AddFriendDiv, CommonModule, FormsModule],
   templateUrl: './add-friend-modal.html',
   styleUrl: './add-friend-modal.css'
 })
@@ -34,7 +35,16 @@ export class AddFriendModal {
     await this.getUsers();
   }
 
+  async queryUsers(){
+    await this.getUsers(this.query);
+  }
+
   async getUsers(queryTerm?: string): Promise<void>{
+
+  let hasQuery = true;
+  if(this.query === ''){
+    hasQuery = false;
+  }
 
     await this.authService.checkSession();
     let res = await fetch('/api/findFriends', {
@@ -42,9 +52,9 @@ export class AddFriendModal {
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        searchTerm: queryTerm,
+        searchTerm: this.query,
         numberOfPeople: 35,
-        hasSearchTerm: !!queryTerm
+        hasSearchTerm: hasQuery
       })
     })
 
