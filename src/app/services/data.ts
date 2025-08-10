@@ -10,20 +10,20 @@ export class Data {
   constructor(private http: HttpClient) {}
 
 
-  getRequest(url: string)  {
-    return this.http.get(url);
+  getRequest<T>(url: string, payload?: any)  {
+    return this.http.get<T>(url, payload);
   }
 
-  postRequest(url: string, payload: any)  {
-    return this.http.post(url, payload);
+  postRequest<T>(url: string, payload?: any)  {
+    return this.http.post<T>(url, payload);
   }
 
-  putRequest(url: string, payload: any) {
-    return this.http.put(url, payload);
+  putRequest<T>(url: string, payload?: any) {
+    return this.http.put<T>(url, payload);
   }
 
-  deleteRequest(url: string) {
-    return this.http.delete(url);
+  deleteRequest<T>(url: string, payload?: any) {
+    return this.http.delete<T>(url);
   }
 
 }

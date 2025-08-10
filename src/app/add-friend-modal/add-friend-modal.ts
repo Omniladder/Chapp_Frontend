@@ -2,6 +2,7 @@ import { Component, ChangeDetectorRef } from '@angular/core';
 import { AddFriendDiv } from '../add-friend-div/add-friend-div';
 import { Data } from '../services/data';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../services/auth.service';
 
 
   type User = {
@@ -24,7 +25,7 @@ import { CommonModule } from '@angular/common';
 })
 export class AddFriendModal {
 
-  constructor(private httpService: Data, private cdr: ChangeDetectorRef){}
+  constructor(private httpService: Data, private cdr: ChangeDetectorRef, private authService: AuthService){}
 
   users: User[] = [];
   query: string = '';
@@ -35,6 +36,7 @@ export class AddFriendModal {
 
   async getUsers(queryTerm?: string): Promise<void>{
 
+    await this.authService.checkSession();
     let res = await fetch('/api/findFriends', {
       method: 'POST',
       credentials: 'include',
