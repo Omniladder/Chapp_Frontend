@@ -14,10 +14,15 @@ export class FriendModal {
   // Data Variables
   @Input() chain!: number;
   @Input() missedMessages!: number;
-  @Input() name!: string;
+  @Input() fname!: string;
+  @Input() lname!: string;
   @Input() username!: string;
   @Input() achievements?: string[];
 
+
+  get name(): string {
+    return `${this.fname} ${this.lname}`;
+  }
 
 
   goToChat(){

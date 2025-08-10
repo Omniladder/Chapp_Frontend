@@ -9,12 +9,8 @@
     <div class="flex flex-col flex-1 overflow-hidden overflow-y-auto ">
       <h1 class=" text-[#F6F8FF] ml-10 mt-7 text-5xl  [font-family:'K2D-Bold',sans-serif]  ">Friends:</h1>
 
-     <div class=" flex-1 mt-1 grid grid-cols-1 ">
-       <friend-modal class="mt-7"  [missedMessages]="1" [chain]="2" [name]="'Dustin O\'Brien'" [achievements]="['Best Friend', '']" [username]="'omniladder'"/>
-       <friend-modal class="mt-7" [missedMessages]="416" [chain]="14" [name]="'Kyle Tranf**lia'" [achievements]="['Mutual Best Friend', 'Friend of a Friend']" [username]="'ktranf**lia1'"/>
-       <friend-modal class="mt-7"  [missedMessages]="0" [chain]="314" [name]="'Spencer Presley'" [achievements]="['Rival Friend', 'Friend of a Friend']"  [username]="'thekingzepp'" />
-       <friend-modal class="mt-7"  [missedMessages]="14" [chain]="0" [name]="'Jungho An'" [achievements]="['Top Friends', '']" [username]="'Korean_Kid_1991'"/>
-       <friend-modal class="mt-7" [missedMessages]="11" [chain]="5"  [name]="'Cole Barbes'" [username]="'cole_barbes'"  [achievements]="['', '']" />
+     <div  *ngFor="let friend of friends" class=" flex-1 mt-1 grid grid-cols-1 ">
+          <friend-modal class="mt-7"  [missedMessages]="0" [chain]="0" [fname]=friend.fname [lname]=friend.lname [achievements]="['', '']" [username]=friend.username/>
      </div>
     </div>
   </div>
