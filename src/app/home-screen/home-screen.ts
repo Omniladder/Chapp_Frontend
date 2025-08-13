@@ -5,6 +5,11 @@ import { FriendModal } from '../friend-modal/friend-modal';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../services/auth.service';
 
+type Connection = {
+  missedMessages: number;
+  user2: Friend;
+}
+
 type Friend = {
   fname: string;
   lname: string;
@@ -28,7 +33,7 @@ export class HomeScreen {
   currentChain!: number;
   achievements!: string[];
 
-  friends! : Friend[];
+  friends! : Connection[];
 
   async ngOnInit():Promise<void> {
     await this.getFriends();
