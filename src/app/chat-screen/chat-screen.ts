@@ -28,12 +28,15 @@ type MessageResponse = {
 export class ChatScreen {
 
   friendID!: number;
+  friendUsername!: string;
   messageInput= '';
   messages!: Message[];
 
   constructor(private route: ActivatedRoute, private authService: AuthService, private cdr: ChangeDetectorRef) {
     this.route.queryParams.subscribe(params => {
       this.friendID = +params['friendID'];
+      this.friendUsername = params['friendUsername'];
+      console.log("Friend Username ", this.friendUsername)
     });
   }
 
@@ -43,16 +46,21 @@ export class ChatScreen {
 
 
   async sendMessage(){
-    await this.authService.checkSession();
-    await fetch('/api/sendMessage', {
-      method: 'POST',
-      credentials: 'include',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        receiverID: this.friendID,
-        message: this.messageInput
+    if(this.messageInput != ''){
+      await this.authService.checkSession();
+      await fetch('/api/sendMessage', {
+        method: 'POST',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          receiverID: this.friendID,
+          message: this.messageInput
       })
-    })
+      })
+      await this.getMessages();
+      this.messageInput = '';
+      this.cdr.detectChanges();
+    }
   }
 
   async getMessages(){

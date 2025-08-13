@@ -28,7 +28,7 @@ export class FriendModal {
 
 
   goToChat(){
-    this.router.navigate(['/chat'], { queryParams: {friendID: this.id}});
+    this.router.navigate(['/chat'], { queryParams: {friendID: this.id, friendUsername: this.username}});
   }
 
 }
