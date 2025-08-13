@@ -9,8 +9,8 @@
     <div class="flex flex-col flex-1 overflow-hidden overflow-y-auto ">
       <h1 class=" text-[#F6F8FF] ml-10 mt-7 text-5xl  [font-family:'K2D-Bold',sans-serif]  ">Friends:</h1>
 
-     <div  *ngFor="let friend of friends" class=" flex-1 mt-1 grid grid-cols-1 ">
-          <friend-modal class="mt-7"  [missedMessages]="0" [chain]="0" [fname]=friend.fname [lname]=friend.lname [achievements]="['', '']" [username]=friend.username/>
+     <div  *ngFor="let friend of friends" class="  mt-1 grid grid-cols-1 ">
+          <friend-modal class="mt-7"  [missedMessages]="0" [chain]="0" [fname]=friend.fname [lname]=friend.lname [achievements]="['', '']" [username]=friend.username [id]=friend.id />
      </div>
     </div>
   </div>

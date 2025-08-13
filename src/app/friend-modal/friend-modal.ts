@@ -12,6 +12,8 @@ export class FriendModal {
   private router = inject(Router)
 
   // Data Variables
+
+  @Input() id!: number;
   @Input() chain!: number;
   @Input() missedMessages!: number;
   @Input() fname!: string;
@@ -26,7 +28,7 @@ export class FriendModal {
 
 
   goToChat(){
-    this.router.navigate(['/chat']);
+    this.router.navigate(['/chat'], { queryParams: {friendID: this.id}});
   }
 
 }

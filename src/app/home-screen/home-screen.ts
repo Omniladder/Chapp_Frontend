@@ -3,15 +3,13 @@ import { WebsiteHeader } from '../website-header/website-header';
 import { ProfileButtons } from '../profile-buttons/profile-buttons';
 import { FriendModal } from '../friend-modal/friend-modal';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../services/auth.service';
 
 type Friend = {
   fname: string;
   lname: string;
   username: string;
-}
-
-type FriendRes = {
-  data: Friend[];
+  id: number;
 }
 
 @Component({
@@ -22,7 +20,7 @@ type FriendRes = {
 })
 export class HomeScreen {
 
-  constructor(private cdr: ChangeDetectorRef){}
+  constructor(private cdr: ChangeDetectorRef, private authService: AuthService){}
 
   //Friend Information
   friendName!: string;
@@ -37,10 +35,14 @@ export class HomeScreen {
   }
 
   async getFriends(){
+
+    await this.authService.checkSession();
+
     let response = await fetch('/api/getFriends',{
       method: 'GET',
       credentials: 'include'
     })
+
     if (!response.ok) throw new Error('Failed to load friends');
 
     let json = (await response.json());

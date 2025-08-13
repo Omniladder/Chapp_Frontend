@@ -9,9 +9,17 @@
 <div class="w-screen h-screen items-center mt-8 flex flex-col ">
 
   <div class=" w-395 h-160 bg-[#F6F8FF] rounded-4xl border-7 border-[#EDB458] overflow-hidden overflow-y-auto flex flex-col-reverse p-4" >
+    <div *ngFor="let message of messages">
+      <div class=" bg-[#EC4E20] max-w-180 min-w-50 w-fit relative h-auto ml-8 mt-4 p-4 rounded-3xl flex flex-col flex-wrap self-start">
+      <div class="absolute left-[-10px] bottom-3 w-10 h-10 bg-[#EC4E20] rotate-30 rounded-xl"></div>
+      <h1 class=" z-2 text-[#f6f8ff] font-bold text-3xl" >{{message.message}}</h1>
+      <h2 class="z-2 text-lg ml-auto text-[#f6f8ff] ">You</h2>
+    </div>
+    </div>
 
 
-   <!-- Your Chat Bubble -->
+
+  <!--
     <div class=" bg-[#EC4E20] max-w-180 min-w-50 w-fit relative h-auto ml-8 mt-4 p-4 rounded-3xl flex flex-col flex-wrap self-start">
       <div class="absolute left-[-10px] bottom-3 w-10 h-10 bg-[#EC4E20] rotate-30 rounded-xl"></div>
       <h1 class=" z-2 text-[#f6f8ff] font-bold text-3xl" >What?</h1>
@@ -20,14 +28,12 @@
 
 
 
-    <!-- Friend Chat Bubble -->
     <div class=" bg-[#272D2D] max-w-180 w-fit min-w-50 relative h-auto ml-auto  mr-8 mt-4 p-5 rounded-3xl flex flex-col flex-wrap self-end">
       <div class="absolute right-[-10px] bottom-3 w-10 h-10 bg-[#272D2D] rotate-60 rounded-xl"></div>
       <h1 class=" z-2 ml-3 mt-3 [font-family:'Instrument-Sans',sans-serif] font-bold text-3xl text-[#f6f8ff]  " >Lorem ipsum dolor sit amet consectetur adipiscing elit. Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex sapien vitae pellentesque sem placerat in id. Placerat in id cursus mi pretium tellus duis. Pretium tellus duis convallis tempus leo eu aenean.</h1>
       <h2 class="text-lg text-[#f6f8ff] mt-2  z-2">Kyle Tranf**lia</h2>
     </div>
 
-    <!-- Friend Chat Bubble -->
     <div class=" bg-[#272D2D] max-w-180 w-fit min-w-50 relative h-auto ml-auto  mr-8 mt-4 p-5 rounded-3xl flex flex-col flex-wrap self-end">
       <div class="absolute right-[-10px] bottom-3 w-10 h-10 bg-[#272D2D] rotate-60 rounded-xl"></div>
       <h1 class=" z-2 ml-3 mt-3 [font-family:'Instrument-Sans',sans-serif] font-bold text-3xl text-[#f6f8ff]  " >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
@@ -36,20 +42,21 @@
 
 
 
-      <!-- Your Chat Bubble -->
     <div class=" bg-[#EC4E20] max-w-180 min-w-50 w-fit relative h-auto ml-8 mt-4 p-4 rounded-3xl flex flex-col flex-wrap self-start">
       <div class="absolute left-[-10px] bottom-3 w-10 h-10 bg-[#EC4E20] rotate-30 rounded-xl"></div>
       <h1 class=" z-2 text-[#f6f8ff] font-bold text-3xl" >Hello</h1>
       <h2 class="z-2 text-lg ml-auto text-[#f6f8ff] ">You</h2>
     </div>
 
+    -->
+
  </div>
 
     <div class="flex flex-row mt-7 ">
       <div class=" bg-[#F6F8FF] w-330 h-45  border-7 border-[#EDB458]  rounded-3xl flex justify-center items-center ">
-        <textarea class=" w-315 h-32 text-3xl resize-none font-bold font-[#272D2D]" placeholder="Type Message Here:" ></textarea>
+        <textarea class=" w-315 h-32 text-3xl resize-none font-bold font-[#272D2D]" [(ngModel)]="messageInput" placeholder="Type Message Here:" ></textarea>
       </div>
-      <button class=" h-45 w-45 rounded-3xl   bg-[#EDB458] text-[#F6F8FF] font-bold text-xl ml-5 cursor-pointer shadow-[3px_3px_12px_rgba(0,0,0,0.5)] transform transition-all duration-200 hover:scale-107 active:scale-95 border-5 border-[#272D2D] ">Send</button>
+      <button class=" h-45 w-45 rounded-3xl   bg-[#EDB458] text-[#F6F8FF] font-bold text-xl ml-5 cursor-pointer shadow-[3px_3px_12px_rgba(0,0,0,0.5)] transform transition-all duration-200 hover:scale-107 active:scale-95 border-5 border-[#272D2D] " (click)="sendMessage()">Send</button>
     </div>
 
 </div>
