@@ -10,7 +10,7 @@
       <h1 class=" text-[#F6F8FF] ml-10 mt-7 text-5xl  [font-family:'K2D-Bold',sans-serif]  ">Friends:</h1>
 
      <div  *ngFor="let friend of friends" class="  mt-1 grid grid-cols-1 ">
-          <friend-modal class="mt-7"  [missedMessages]=friend.missedMessages [chain]="0" [fname]=friend.user2.fname [lname]=friend.user2.lname [achievements]="['', '']" [username]=friend.user2.username [id]=friend.user2.id />
+          <friend-modal class="mt-7"  [missedMessages]=friend.missedMessages [chain]=friend.streak [fname]=friend.user2.fname [lname]=friend.user2.lname [achievements]="['', '']" [username]=friend.user2.username [id]=friend.user2.id />
      </div>
     </div>
   </div>

@@ -7,6 +7,7 @@ import { AuthService } from '../services/auth.service';
 
 type Connection = {
   missedMessages: number;
+  streak: number;
   user2: Friend;
 }
 
