@@ -9,6 +9,12 @@ type Connection = {
   missedMessages: number;
   streak: number;
   user2: Friend;
+
+  isFoF: boolean;
+  isRival: boolean;
+  isTop: boolean;
+  isBest: boolean;
+  isMutualBest: boolean;
 }
 
 type Friend = {
