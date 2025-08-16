@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
     username: string;
     fname: string;
     lname: string;
-    friendOfFriend: boolean;
+    isFoF: boolean;
   }
 
   type FriendsResponse = {
