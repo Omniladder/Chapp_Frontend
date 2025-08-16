@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, Output } from '@angular/core';
 import { WebsiteHeader } from '../website-header/website-header';
 import { ProfileButtons } from '../profile-buttons/profile-buttons';
 import { FriendModal } from '../friend-modal/friend-modal';
@@ -42,6 +42,7 @@ export class HomeScreen {
 
   friends! : Connection[];
 
+
   async ngOnInit():Promise<void> {
     await this.getFriends();
   }
@@ -59,7 +60,6 @@ export class HomeScreen {
 
     let json = (await response.json());
     this.friends = json.data || [];
-    console.log("Friends ", this.friends);
     this.cdr.detectChanges();
   }
 

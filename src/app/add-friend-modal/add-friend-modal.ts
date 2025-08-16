@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectorRef, Output, EventEmitter } from '@angular/core';
 import { AddFriendDiv } from '../add-friend-div/add-friend-div';
 import { Data } from '../services/data';
 import { CommonModule } from '@angular/common';
@@ -26,6 +26,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class AddFriendModal {
 
+  @Output() queryCalled = new EventEmitter<void>();
+
   constructor(private httpService: Data, private cdr: ChangeDetectorRef, private authService: AuthService){}
 
   users: User[] = [];
@@ -33,6 +35,12 @@ export class AddFriendModal {
 
   async ngOnInit(): Promise<void> {
     await this.getUsers();
+  }
+
+  async updateFrontend(){
+    this.getUsers('');
+    this.queryCalled.emit();
+    console.log("Update Frontend Called");
   }
 
   async queryUsers(){
@@ -66,6 +74,7 @@ export class AddFriendModal {
 
     const json = (await res.json()) as FriendsResponse;
     this.users = json.data;
+    this.query = '';
     this.cdr.detectChanges();
 
     console.log("Users ", this.users);

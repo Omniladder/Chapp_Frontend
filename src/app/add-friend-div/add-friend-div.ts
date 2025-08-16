@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -10,6 +9,8 @@ import { AuthService } from '../services/auth.service';
 })
 export class AddFriendDiv {
 
+  @Output() addedEvent = new EventEmitter<void>();
+
   constructor(private authService: AuthService){}
 
   @Input() fname! : string;
@@ -19,8 +20,6 @@ export class AddFriendDiv {
   @Input() isFoF! : boolean;
 
   async addFriend(): Promise<void> {
-
-    console.log("Test");
     console.log("User Id: ", this.id)
     await this.authService.checkSession();
     await fetch('/api/addFriend', {
@@ -30,8 +29,10 @@ export class AddFriendDiv {
       body: JSON.stringify({
         friendID: this.id
       })
-    })
+    });
+    this.addedEvent.emit();
   }
+
 
   get name(): string {
     return `${this.fname} ${this.lname}`;
