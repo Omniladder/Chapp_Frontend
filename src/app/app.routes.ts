@@ -29,6 +29,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    component: NotFoundScreen
+    component: HomeScreen
   }
 ];
