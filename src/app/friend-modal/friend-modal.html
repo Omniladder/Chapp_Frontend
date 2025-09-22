@@ -1,39 +1,39 @@
-<div class=" bg-[#F6F8FF] w-390 h-45 rounded-xl ml-7 border-[#EDB458] cursor-pointer transform transition-all duration-500 hover:scale-102 border-5 flex flex-row items-center shadow-[3px_3px_12px_rgba(0,0,0,0.5)] " (click)="goToChat()">
-  <img src="../../assets/ProfileIcons/Profile.png" class="h-35 w-auto ml-8 ">
+<div class=" bg-[#F6F8FF] w-[95vw] h-[18vh] rounded-xl ml-[2.5vw] border-[#EDB458] cursor-pointer transform transition-all duration-500 hover:scale-102 border-5 flex flex-row items-center shadow-[3px_3px_12px_rgba(0,0,0,0.5)] " (click)="goToChat()">
+  <img src="../../assets/ProfileIcons/Profile.png" class="h-[15vh] w-auto ml-8 ">
   <div class="ml-7 flex flex-col">
-    <h1 class=" text-[#272D2D] font-bold text-5xl " >{{name}}</h1>
-    <h1 class=" text-gray-500 text-2xl ">{{username}}</h1>
+    <h1 class=" text-[#272D2D] font-bold text-[3vw] " >{{name}}</h1>
+    <h1 class=" text-gray-500 text-[1.5vw] mt-[-.5vh]">{{username}}</h1>
 
     @if (missedMessages > 1) {
-    <h1 class=" text-[#28AFB0] text-2xl mt-1 " >{{ missedMessages }} Missed Messages</h1>
+    <h1 class=" text-[#28AFB0] text-[1.5vw] mt-[.5vh] " >{{ missedMessages }} Missed Messages</h1>
   }
   @else{
    @if (missedMessages == 1) {
-     <h1 class=" text-[#28AFB0] text-2xl mt-1 " >{{ missedMessages }} Missed Message</h1>
+     <h1 class=" text-[#28AFB0] text-[1.5vw] mt-[.5vh] " >{{ missedMessages }} Missed Message</h1>
    }
    @else{
-     <h1 class=" text-[#272D2D] text-2xl mt-1 " >No Missed Messages</h1>
+     <h1 class=" text-[#272D2D] text-[1.5vw] mt-[.5vh] " >No Missed Messages</h1>
    }
   }
   </div>
 
-  <div class=" ml-auto mr-7  flex flex-row">
+  <div class=" ml-auto mr-[.5vw]  flex flex-row">
 
     <div class="flex flex-col mt-1">
-      <h1 class="mr-13 ml-auto text-3xl text-[#272D2D]">Achievements:</h1>
-      <div class="mr-13 mt-1 flex flex-col">
+      <h1 class="mr-13 ml-auto text-[2vw] text-[#272D2D]">Achievements:</h1>
+      <div class="mr-13 flex flex-col mt-[.5vh]">
         @for (achievement of achievements ; track achievement)
         {
-        <h3 class=" text-[#EDB458] text-3xl ml-auto ">{{achievement}}</h3>
+        <h3 class=" text-[#EDB458] text-[1.7vw] mt-[-.8vh] ml-auto ">{{achievement}}</h3>
       }
       <!--      <h3 class=" text-[#EDB458] text-2xl ml-auto ">Friend of a Friend </h3> -->
       </div>
     </div>
 
     <div class=" border-[#272D2D] flex flex-row items-center">
-       <h1 class=" text-[#272D2D] text-4xl mr-5 ">Chain:</h1>
-       <div class=" bg-[#EDB458] items-center justify-center flex rounded-full w-40 h-40 border-5 border-[#EC4E20] ">
-         <h1 class=" text-7xl text-[#F6F8FF] font-bold ">{{ chain }}</h1>
+       <h1 class=" text-[#272D2D] text-[2vw] mr-5 ">Chain:</h1>
+       <div class=" bg-[#EDB458] items-center justify-center flex rounded-full w-[15vh] h-[15vh] border-5 border-[#EC4E20] ">
+         <h1 class=" text-[7vh] text-[#F6F8FF] font-bold ">{{ chain }}</h1>
        </div>
    </div>
   </div>
