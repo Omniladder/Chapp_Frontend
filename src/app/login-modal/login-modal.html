@@ -1,22 +1,22 @@
 <!-- Login Main Section Div -->
-<div class=" h-[90vh] w-[55vw] max-w-[90vh] bg-[#F6F8FF] fixed inset-0 mx-auto my-auto  border-[#EDB458] border-10 rounded-3xl flex items-center flex-col">
+<div class=" h-[95vh] w-[95vw] md:h-[90vh] md:w-[55vw] md:max-w-[90vh] bg-[#F6F8FF] fixed inset-0 mx-auto my-auto  border-[#EDB458] border-10 rounded-3xl flex items-center flex-col">
   <!-- Logo Section-->
-  <img src="assets/Logos/Chapplogo_transparent.png" class=" h-[20vh] w-auto mt-[2vh]">
-  <img src="assets/Logos/Chapp_TextOnly_Dark.png" class=" h-[10vh] w-auto mt-2">
+  <img src="assets/Logos/Chapplogo_transparent.png" class=" h-[15vh] md:h-[20vh] md:w-auto mt-[2vh]">
+  <img src="assets/Logos/Chapp_TextOnly_Dark.png" class=" h-[10vh] md:h-[10vh] md:w-auto mt-2">
 
 
   <!-- OAuth Buttons -->
   <div class="items-center mt-1">
-    <h3 class="items-center font-bold text-[3vh] ml-2 [font-family:'Nimbus_Sans',sans-serif] text-[#272d2d]"> Login With:</h3>
+    <h3 class="items-center font-bold text-[3.5vh] md:text-[3vh] ml-2 [font-family:'Nimbus_Sans',sans-serif] text-[#272d2d]"> Login With:</h3>
     <div class="grid grid-cols-3 mt-2 gap-8">
-      <button class="bg-[#272d2d] h-[6vw] w-[6vw] rounded-2xl flex justify-center max-w-[10vh] max-h-[10vh] items-center border-[#EDB458] border-4  shadow-[3px_3px_12px_rgba(0,0,0,0.5)] cursor-pointer transform transition-transform duration-200 hover:scale-107">
-        <img src="assets/OAuth/GoogleLogo.png" class="h-[4vw] w-[4vw] max-w-[8vh] max-h-[8vh] " (click)="OAuthError()">
+      <button class="bg-[#272d2d] h-[18vw] w-[18vw] md:h-[6vw] md:w-[6vw] rounded-2xl flex justify-center md:max-w-[10vh] md:max-h-[10vh] items-center border-[#EDB458] border-4  shadow-[3px_3px_12px_rgba(0,0,0,0.5)] cursor-pointer transform transition-transform duration-200 hover:scale-107">
+        <img src="assets/OAuth/GoogleLogo.png" class=" h-[13.5vw] w-[13.5vw] md:h-[4vw] md:w-[4vw] md:max-w-[8vh] md:max-h-[8vh] " (click)="OAuthError()">
       </button>
-      <button class="bg-[#272d2d] h-[6vw] w-[6vw] rounded-2xl flex justify-center max-w-[10vh] max-h-[10vh] items-center border-[#EDB458] border-4 shadow-[3px_3px_12px_rgba(0,0,0,0.5)] cursor-pointer transform transition-transform duration-200 hover:scale-107"  (click)="OAuthError()">
-        <img src="assets/OAuth/FacebookLogo.png" class="h-[4vw] w-[4vw] max-w-[8vh] max-h-[8vh]">
+      <button class="bg-[#272d2d] h-[18vw] w-[18vw] md:h-[6vw] md:w-[6vw] rounded-2xl flex justify-center md:max-w-[10vh] md:max-h-[10vh] items-center border-[#EDB458] border-4 shadow-[3px_3px_12px_rgba(0,0,0,0.5)] cursor-pointer transform transition-transform duration-200 hover:scale-107"  (click)="OAuthError()">
+        <img src="assets/OAuth/FacebookLogo.png" class=" h-[13.5vw] w-[13.5vw] md:h-[4vw] md:w-[4vw] md:max-w-[8vh] md:max-h-[8vh]">
       </button>
-      <button class="bg-[#272d2d] h-[6vw] w-[6vw] rounded-2xl flex justify-center items-center max-w-[10vh] max-h-[10vh] border-[#EDB458] border-4 shadow-[3px_3px_12px_rgba(0,0,0,0.5)] cursor-pointer transform transition-transform duration-200 hover:scale-107">
-        <img src="assets/OAuth/LinkedinLogo.png" class="h-[4vw] w-[4vw] max-w-[8vh] max-h-[8vh] rounded-3xl border-[#EDB458]  "  (click)="OAuthError()" >
+      <button class="bg-[#272d2d] h-[18vw] w-[18vw] md:h-[6vw] md:w-[6vw] rounded-2xl flex justify-center items-center md:max-w-[10vh] md:max-h-[10vh] border-[#EDB458] border-4 shadow-[3px_3px_12px_rgba(0,0,0,0.5)] cursor-pointer transform transition-transform duration-200 hover:scale-107">
+        <img src="assets/OAuth/LinkedinLogo.png" class="md:h-[4vw] h-[13.5vw] w-[13.5vw] md:w-[4vw] md:max-w-[8vh] md:max-h-[8vh] rounded-3xl border-[#EDB458]  "  (click)="OAuthError()" >
       </button>
     </div>
   </div>
@@ -25,22 +25,22 @@
 
   <div class="mt-[3vh] flex flex-col">
 
-    <h3 class="items-center font-bold text-[3vh] ml-5 [font-family:'Nimbus_Sans',sans-serif] text-[#272d2d]"> Or Sign-In With:</h3>
+    <h3 class="items-center font-bold md:text-[3vh] ml-5 [font-family:'Nimbus_Sans',sans-serif] text-[3.5vh] text-[#272d2d]"> Or Sign-In With:</h3>
 
 
   <!-- Username Input box -->
-    <input type="text" [(ngModel)]="accountSignin.username" class=" w-[40vw] max-w-[70vh] h-[5vh] mt-[3vh] " pInputText placeholder="Username:"/>
+    <input type="text" [(ngModel)]="accountSignin.username" class=" md:w-[40vw] md:max-w-[70vh] md:h-[5vh] mt-[3vh] " pInputText placeholder="Username:"/>
 
   <!-- Password Input box -->
-    <p-password  [(ngModel)]="accountSignin.password"  class=" mt-[2vh] max-w-[70vh] w-[40vw] h-[5vh] " placeholder="Password:" [feedback]="false" [toggleMask]="true"  inputStyleClass="w-[40vw]" />
+    <p-password  [(ngModel)]="accountSignin.password"  class=" mt-[2vh] md:max-w-[70vh] md:w-[40vw] md:h-[5vh] " placeholder="Password:" [feedback]="false" [toggleMask]="true"  inputStyleClass="md:w-[40vw]" />
 
 
     <div class="flex flex-col  mt-[3vh]">
     <div class="flex flex-row items-center  justify-center ">
 
-      <h1 class=" text-[#28AFB0] underline cursor-pointer text-[1.2vw] mr-37 " (click)="goToCreate()">Create Account</h1>
+      <h1 class=" text-[#28AFB0] underline cursor-pointer text-[4vw] md:text-[1.2vw] mr-auto " (click)="goToCreate()">Create Account</h1>
       <div class="flex flex-col items-center">
-        <button class="bg-[#EC4E20] rounded-xl h-[7vh] w-[11vw] max-w-[18vh] text-white font-bold [font-family:'Nimbus_Sans',sans-serif] text-[1.5vw] cursor-pointer hover:border-[#EDB458]  transform transition-all duration-100 hover:border-4 active:bg-[#EDB458]" (click)="loginToAccount()">
+        <button class="bg-[#EC4E20] rounded-xl text-[5vw] h-[8vh] w-[30vw] md:h-[7vh] md:w-[11vw] md:max-w-[18vh] text-white font-bold [font-family:'Nimbus_Sans',sans-serif] md:text-[1.5vw] cursor-pointer hover:border-[#EDB458]  transform transition-all duration-100 hover:border-4 active:bg-[#EDB458]" (click)="loginToAccount()">
         Login
         </button>
 
