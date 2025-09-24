@@ -16,5 +16,17 @@ export class AuthService {
         this.router.navigate(['/login']);
       }
   }
+
+  async hasSession(): Promise<void>{
+       let response = await fetch('/api/isExpired', {
+        method: 'GET',
+        credentials: 'include'
+      });
+
+      if(response.status == 200){
+        this.router.navigate(['/home']);
+      }
+
+  }
 }
 
