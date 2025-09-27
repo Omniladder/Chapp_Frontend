@@ -40,6 +40,15 @@ export class LoginModal {
     this.cdr.detectChanges();
   }
 
+
+  googleLogin(){
+    window.location.href = '/api/google';
+  }
+
+  githubLogin(){
+    window.location.href = '/api/github';
+  }
+
   goToHome(){
    this.router.navigate(['/home']);
   }
